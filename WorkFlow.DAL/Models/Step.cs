@@ -15,5 +15,5 @@ public partial class Step
 
     public virtual Flow? Flow { get; set; }
 
-    public virtual ICollection<StepField> StepFields { get; set; } = new List<StepField>();
+    public virtual ICollection<FlowStep> FlowSteps { get; set; } = new List<FlowStep>();
 }

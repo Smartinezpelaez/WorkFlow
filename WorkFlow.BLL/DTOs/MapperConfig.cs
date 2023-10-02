@@ -10,6 +10,6 @@ public class MapperConfig : Profile
         CreateMap<Field, FieldDTO>().ReverseMap();
         CreateMap<Flow, FlowDTO>().ReverseMap();
         CreateMap<Step, StepDTO>().ReverseMap();
-        CreateMap<StepField, StepFieldDTO>().ReverseMap();
+      
     }
 }

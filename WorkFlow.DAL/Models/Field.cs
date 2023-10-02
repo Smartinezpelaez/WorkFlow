@@ -11,5 +11,5 @@ public partial class Field
 
     public string FieldName { get; set; } = null!;
 
-    public virtual ICollection<StepField> StepFields { get; set; } = new List<StepField>();
+    public virtual ICollection<FlowStepsField> FlowStepsFields { get; set; } = new List<FlowStepsField>();
 }

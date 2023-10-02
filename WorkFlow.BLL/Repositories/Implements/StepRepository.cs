@@ -10,4 +10,11 @@ public class StepRepository : GenericRepository<Step>, IStepRepository
     {
             this.context = context;
     }
+
+    public IEnumerable<Step> GetStepsByFlowId(int flowId)
+    {
+        // Suponiendo que tienes una entidad Step con una propiedad FlowId
+        return context.Steps.Where(step => step.FlowId == flowId).ToList();
+    }
+
 }
