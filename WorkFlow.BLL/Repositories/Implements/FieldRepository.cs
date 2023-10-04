@@ -1,4 +1,5 @@
-﻿using WorkFlow.DAL.Models;
+﻿using WorkFlow.BLL.DTOs;
+using WorkFlow.DAL.Models;
 
 namespace WorkFlow.BLL.Repositories.Implements;
 
@@ -11,15 +12,22 @@ public class FieldRepository : GenericRepository<Field>, IFieldRepository
         this.context = context;        
     }
 
-    //public new async Task DeleteAsync(int id)
-    //{
-    //    var field = await GetByIdAsync(id);
+    public IEnumerable<FlowStepsFieldDTO> GetFieldsByFlowId(int flowId)
+    {
+        var fields = context.FlowSteps
+            .Where(fs => fs.FlowdId == flowId)
+            .SelectMany(fs => fs.FlowStepsFields)
+            .Select(fsField => new FlowStepsFieldDTO
+            {
+                FlowStepsFieldId = fsField.FlowStepsFieldId,
+                FlowsStepId = fsField.FlowsStepId,
+                FieldId = fsField.FieldId,
+                Field = fsField.Field, // Asegúrate de que la propiedad de navegación Field esté cargada
+                FlowsStep = fsField.FlowsStep // Asegúrate de que la propiedad de navegación FlowsStep esté cargada
+            })
+            .ToList();
 
-    //    if (field == null) throw new Exception("The entity is null.");
-    //    if (context.Fields.Any(x => x.FieldId == id)) throw new Exception("Foreign Key Movements.");
-
-    //    context.Fields.Remove(field);
-    //    await context.SaveChangesAsync();
-    //}
+        return fields;
+    }
 
 }

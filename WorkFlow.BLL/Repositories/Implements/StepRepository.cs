@@ -1,4 +1,5 @@
-﻿using WorkFlow.DAL.Models;
+﻿using System.Data.Entity;
+using WorkFlow.DAL.Models;
 
 namespace WorkFlow.BLL.Repositories.Implements;
 

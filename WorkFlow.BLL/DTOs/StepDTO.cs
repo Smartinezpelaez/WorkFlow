@@ -12,4 +12,7 @@ public class StepDTO
 
     public string StepName { get; set; } = null!;
 
+    public virtual ICollection<FlowStep> FlowSteps { get; set; } = new List<FlowStep>();
 }
+
+

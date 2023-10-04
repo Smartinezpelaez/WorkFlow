@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WorkFlow.DAL.Models;
+﻿namespace WorkFlow.DAL.Models;
 
 public partial class Step
 {

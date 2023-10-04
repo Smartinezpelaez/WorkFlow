@@ -15,6 +15,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IFieldRepository, FieldRepository>();
 builder.Services.AddScoped<IFlowRepository, FlowRepository>();
 builder.Services.AddScoped<IStepRepository, StepRepository>();
+builder.Services.AddScoped<IFlowStepRepository, FlowStepRepository>();
 
 //Services
 
