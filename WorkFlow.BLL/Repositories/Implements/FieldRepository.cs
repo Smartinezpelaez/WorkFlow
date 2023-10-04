@@ -22,8 +22,8 @@ public class FieldRepository : GenericRepository<Field>, IFieldRepository
                 FlowStepsFieldId = fsField.FlowStepsFieldId,
                 FlowsStepId = fsField.FlowsStepId,
                 FieldId = fsField.FieldId,
-                Field = fsField.Field, // Asegúrate de que la propiedad de navegación Field esté cargada
-                FlowsStep = fsField.FlowsStep // Asegúrate de que la propiedad de navegación FlowsStep esté cargada
+                Field = fsField.Field, 
+                FlowsStep = fsField.FlowsStep 
             })
             .ToList();
 

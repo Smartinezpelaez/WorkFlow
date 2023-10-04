@@ -9,7 +9,7 @@ namespace WorkFlow.BLL.Repositories.Implements
 {
     public class FlowStepRepository : IFlowStepRepository
     {
-        private readonly WorkFlowsContext context; // Reemplazar YourDbContext con el DbContext real
+        private readonly WorkFlowsContext context; 
 
         public FlowStepRepository(WorkFlowsContext context)
         {
@@ -22,7 +22,6 @@ namespace WorkFlow.BLL.Repositories.Implements
                 .Where(fs => fs.FlowdId == flowId)
                 .ToList();
         }
-
-        // Implementar otros métodos según sea necesario...
+             
     }
 }
